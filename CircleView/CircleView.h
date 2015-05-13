@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YXEasing.h"
 
 @interface CircleView : UIView
 
@@ -39,19 +40,21 @@
  *  做strokeEnd动画
  *
  *  @param value    取值 [0, 1]
+ *  @param func     函数指针
  *  @param animated 是否执行动画
  *  @param duration 动画持续的时间
  */
-- (void)strokeEnd:(CGFloat)value animated:(BOOL)animated duration:(CGFloat)duration;
+- (void)strokeEnd:(CGFloat)value animationType:(AHEasingFunction)func animated:(BOOL)animated duration:(CGFloat)duration;
 
 /**
  *  做strokeStart动画
  *
  *  @param value    取值 [0, 1]
+ *  @param func     函数指针
  *  @param animated 是否执行动画
  *  @param duration 动画持续的时间
  */
-- (void)strokeStart:(CGFloat)value animated:(BOOL)animated duration:(CGFloat)duration;
+- (void)strokeStart:(CGFloat)value animationType:(AHEasingFunction)func animated:(BOOL)animated duration:(CGFloat)duration;
 
 /**
  *  便利构造器创建出实例对象

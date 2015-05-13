@@ -84,19 +84,21 @@
     CGFloat anotherPercent = arc4random() % 100 / 100.f;
     
     // 圆圈1动画
-    [self.circleView1 strokeEnd:percent animated:YES duration:1.f];
+    [self.circleView1 strokeEnd:percent animationType:ElasticEaseInOut animated:YES duration:1.f];
     
     // 圆圈2动画
-    [self.circleView2 strokeEnd:percent animated:YES duration:1.f];
+    [self.circleView2 strokeEnd:percent animationType:ExponentialEaseInOut animated:YES duration:1.f];
     
     // 圆圈3动画
     [self.circleView3 strokeStart:(percent < anotherPercent ? percent : anotherPercent)
+                    animationType:ExponentialEaseInOut
                          animated:YES duration:1.f];
     [self.circleView3 strokeEnd:(percent < anotherPercent ? anotherPercent : percent)
+                  animationType:ExponentialEaseInOut
                        animated:YES duration:1.f];
     
     // 圆圈4动画
-    [self.circleView4 strokeEnd:percent animated:YES duration:1.f];
+    [self.circleView4 strokeEnd:percent animationType:ExponentialEaseOut animated:YES duration:1.f];
 }
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "CircleView.h"
-#import "YXEasing.h"
 
 // 将度数转换为弧度
 #define   RADIAN(degrees)  ((M_PI * (degrees))/ 180.f)
@@ -88,7 +87,7 @@
     self.circleLayer.strokeEnd   = 0.f;
 }
 
-- (void)strokeEnd:(CGFloat)value animated:(BOOL)animated duration:(CGFloat)duration {
+- (void)strokeEnd:(CGFloat)value animationType:(AHEasingFunction)func animated:(BOOL)animated duration:(CGFloat)duration {
     
     // 过滤掉不合理的值
     if (value <= 0) {
@@ -105,7 +104,7 @@
         keyAnimation.values               = \
             [YXEasing calculateFrameFromValue:self.circleLayer.strokeEnd
                                       toValue:value
-                                         func:CubicEaseInOut
+                                         func:func
                                    frameCount:duration * 60];
         
         // 执行动画
@@ -119,7 +118,7 @@
     }
 }
 
-- (void)strokeStart:(CGFloat)value animated:(BOOL)animated duration:(CGFloat)duration {
+- (void)strokeStart:(CGFloat)value animationType:(AHEasingFunction)func animated:(BOOL)animated duration:(CGFloat)duration {
     // 过滤掉不合理的值
     if (value <= 0) {
         value = 0;
@@ -135,7 +134,7 @@
         keyAnimation.values               = \
         [YXEasing calculateFrameFromValue:self.circleLayer.strokeStart
                                   toValue:value
-                                     func:CubicEaseInOut
+                                     func:func
                                frameCount:duration * 60];
         
         // 执行动画
