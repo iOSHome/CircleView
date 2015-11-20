@@ -2,7 +2,7 @@
 //  YXEasing.h
 //  Prize
 //
-//  Copyright (c) 2014年 Y.X. All rights reserved.
+//  Copyright (c) 2015年 Y.X. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

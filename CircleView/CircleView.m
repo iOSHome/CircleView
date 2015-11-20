@@ -2,7 +2,7 @@
 //  CircleView.m
 //  YXMWeather
 //
-//  Created by XianMingYou on 15/5/12.
+//  Created by XianMingYou on 15/11/12.
 //  Copyright (c) 2015年 XianMingYou. All rights reserved.
 //
 
